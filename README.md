@@ -1,9 +1,9 @@
 # EDYOU OS – Open-Source School Linux
 
-[![GPL licensed](https://img.shields.io/badge/license-GPL-blue.svg)](https://github.com/EDYOU-Systems/EDYOU-OS/blob/main/LICENSE)
-[![Discussions](https://img.shields.io/badge/discussions-join-blue)](https://github.com/EDYOU-Systems/EDYOU-OS/discussions)
-[![Website Status](https://img.shields.io/website?url=https%3A%2F%2Fedyou-systems.github.io%2FEDYOUOS%2F)](https://edyou-os.vercel.app/)
-[![Latest Version](https://img.shields.io/badge/version-v1.0.0-red)](https://edyou-systems.github.io/EDYOUOS/#download)
+[![GPL licensed](https://img.shields.io/badge/license-GPL-blue.svg)](https://github.com/DevAnthony038/EDYOU-OS/blob/main/LICENSE)
+[![Discussions](https://img.shields.io/badge/discussions-join-blue)](https://github.com/DevAnthony038/EDYOU-OS/discussions)
+[![Website Status](https://img.shields.io/website?url=https%3A%2F%2Fhttps://edyou-os.vercel.app/)](https://edyou-os.vercel.app/)
+[![Latest Version](https://img.shields.io/badge/version-v1.0.0-red)](https://edyou-os.vercel.app/)
 
 EDYOU OS is a modern, privacy-focused Linux operating system designed specifically for schools, educational institutions, and learners. It combines freedom, performance, and reliability without the limitations of traditional operating systems.
 
@@ -66,7 +66,7 @@ EDYOU OS fully supports Secure Boot. During installation, it is highly recommend
 
 ## Installation Guide
 
-1. Download the EDYOU OS ISO file from the official site: [EDYOU OS Downloads](https://edyou-systems.github.io/EDYOUOS/#download)
+1. Download the EDYOU OS ISO file from the official site: [EDYOU OS Downloads](https://edyou-os.vercel.app/#download)
 2. Create a bootable USB drive using tools like Rufus or Etcher.
 3. Boot your computer from the USB drive and follow the on-screen instructions.
 4. Enjoy a fully open, privacy-friendly school operating system!
@@ -95,7 +95,7 @@ Run `make fast` to build the fast configuration (currently set for `de_DE` first
 ## Community & Support
 
 Join discussions, ask questions, or provide feedback here:  
-[GitHub Discussions](https://github.com/edyou-systems/EDYOU-OS/discussions)
+[GitHub Discussions](https://github.com/DevAnthony038/EDYOU-OS/discussions)
 
 ---
 
