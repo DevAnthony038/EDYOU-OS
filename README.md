@@ -1,82 +1,81 @@
-# EDYOU OS – Open-Source Schul-Linux
+# EDYOU OS – Open-Source School Linux
 
 [![GPL licensed](https://img.shields.io/badge/license-GPL-blue.svg)](https://github.com/EDYOU-Systems/EDYOU-OS/blob/main/LICENSE)
 [![Discussions](https://img.shields.io/badge/discussions-join-blue)](https://github.com/EDYOU-Systems/EDYOU-OS/discussions)
 [![Website Status](https://img.shields.io/website?url=https%3A%2F%2Fedyou-systems.github.io%2FEDYOUOS%2F)](https://edyou-os.vercel.app/)
 [![Latest Version](https://img.shields.io/badge/version-v1.0.0-red)](https://edyou-systems.github.io/EDYOUOS/#download)
 
-EDYOU OS ist ein modernes, datenschutzorientiertes Linux-Betriebssystem, das speziell für Schulen, Bildungseinrichtungen und Lernende entwickelt wurde.  
-Es verbindet Freiheit, Performance und Zuverlässigkeit — ohne die Beschränkungen herkömmlicher Betriebssysteme.
+EDYOU OS is a modern, privacy-focused Linux operating system designed specifically for schools, educational institutions, and learners. It combines freedom, performance, and reliability without the limitations of traditional operating systems.
 
-Basierend auf Ubuntu LTS bietet EDYOU OS eine Windows-ähnliche Oberfläche sowie die Stabilität, Geschwindigkeit und Offenheit, die nur Linux liefern kann.
+Built on Ubuntu LTS, EDYOU OS offers a Windows-like interface along with the stability, speed, and openness that only Linux can provide.
 
-Für mehr Informationen besuche die offizielle Webseite: [EDYOU OS Website](https://edyou-os.vercel.app/)
+For more information, visit the official website: [EDYOU OS Website](https://edyou-os.vercel.app/)
 
 ![EDYOU OS Screenshot](Image.png)
 
 ---
 
-## Hauptmerkmale
+## Key Features
 
-- **Open-Source & anpassbar** – komplett frei veränder- und weiterverbreitbar  
-- **Datenschutz im Fokus** – keine unnötige Datenerfassung oder Telemetrie  
-- **Schülertauglich** – intuitive Oberfläche und vorinstallierte Bildungswerkzeuge  
-- **Leichtgewichtig & schnell** – optimiert für verschiedene Hardwareklassen  
-- **Stabile Basis** – aufgebaut auf Ubuntu LTS für langfristigen Support und Sicherheit  
-- **Moderne Oberfläche** – Windows-ähnliches Design für einfache Einführung an Schulen
-
----
-
-## Systemanforderungen
-
-### EDYOU OS unterstützt Secure Boot!
-
-EDYOU OS unterstützt Secure Boot vollständig. Während der Installation wird dringend empfohlen, Secure Boot zu aktivieren, um die Sicherheit Ihres Systems zu gewährleisten.
-
-### Minimale Systemanforderungen
-
-| Komponente          | Anforderung                     |
-|---------------------|---------------------------------|
-| Architektur         | x86_64-Architektur              |
-| Firmware            | UEFI oder BIOS                  |
-| Prozessor           | 2 GHz Prozessor                 |
-| RAM                 | 4 GB RAM                        |
-| Festplattenspeicher | 20 GB freier Speicherplatz      |
-| Bildschirm          | 1024x768 Bildschirmauflösung    |
-| Anschlüsse          | USB-Anschluss oder DVD-Laufwerk |
-
-### Systemanforderungen für die beste Erfahrung
-
-| Komponente          | Anforderung                              |
-|---------------------|------------------------------------------|
-| Architektur         | x86_64-Architektur                       |
-| Firmware            | UEFI-Firmware mit Secure Boot            |
-| Prozessor           | 2,5 GHz Quad-Core-Prozessor              |
-| RAM                 | 8 GB RAM                                 |
-| Festplattenspeicher | 50 GB freier Speicherplatz               |
-| Bildschirm          | 2560x1440 Auflösung (27-Zoll-Bildschirm) |
-| Internet            | Internetzugang                           |
-
-**Wichtige Hinweise zur Hardware-Unterstützung:**
-
-- EDYOU OS unterstützt derzeit nur die x86_64-Architektur. Wenn Sie eine andere Architektur verwenden (z. B. ARM), können Sie EDYOU OS nicht installieren. (ARM wird nicht unterstützt)
-- EDYOU OS unterstützt nur ACPI-kompatible Hardware. Wenn Sie nicht-ACPI-kompatible Hardware verwenden, können Sie EDYOU OS nicht installieren. (Legacy-Hardware wird nicht unterstützt)
-- EDYOU OS unterstützt sowohl UEFI- als auch BIOS-Boot-Firmware. Stellen Sie sicher, dass Ihre Hardware ACPI-kompatibel ist, um eine ordnungsgemäße Installation zu gewährleisten. (U-Boot wird nicht unterstützt)
+- **Open-Source & Customizable**: Fully free to modify and redistribute.
+- **Privacy-First**: No unnecessary data collection or telemetry.
+- **Student-Friendly**: Intuitive interface with pre-installed educational tools.
+- **Lightweight & Fast**: Optimized for various hardware classes.
+- **Stable Foundation**: Based on Ubuntu LTS for long-term support and security.
+- **Modern Interface**: Windows-like design for easy adoption in schools.
 
 ---
 
-## Installationsanleitung
+## System Requirements
 
-1. Lade die EDYOU OS ISO-Datei von der offiziellen Seite herunter: [EDYOU OS Downloads](https://edyou-systems.github.io/EDYOUOS/#download)  
-2. Erstelle ein bootfähiges USB-Medium mit Tools wie Rufus oder Etcher  
-3. Starte den Rechner vom USB-Stick und folge den Anweisungen auf dem Bildschirm  
-4. Viel Spaß mit einem vollständig offenen, datenschutzfreundlichen Schulbetriebssystem!
+### EDYOU OS Supports Secure Boot!
 
-Hinweis: EDYOU OS basiert derzeit auf der Ubuntu LTS-Version `questing`. Der offizielle Support ist aktuell bis 2026 geplant; dies kann sich in zukünftigen Versionen ändern.
+EDYOU OS fully supports Secure Boot. During installation, it is highly recommended to enable Secure Boot to ensure the security of your system.
 
-### Build-Anleitung
+### Minimum System Requirements
 
-Wenn du EDYOU OS selbst bauen möchtest, nutze das beiliegende `Makefile`. Häufige Befehle:
+| Component       | Requirement                  |
+|-----------------|------------------------------|
+| Architecture   | x86_64 architecture         |
+| Firmware       | UEFI or BIOS                |
+| Processor      | 2 GHz processor             |
+| RAM            | 4 GB RAM                    |
+| Disk Space     | 20 GB free disk space       |
+| Screen         | 1024x768 screen resolution  |
+| Ports          | USB port or DVD drive       |
+
+### Recommended System Requirements for Best Experience
+
+| Component       | Requirement                          |
+|-----------------|--------------------------------------|
+| Architecture   | x86_64 architecture                  |
+| Firmware       | UEFI firmware with Secure Boot       |
+| Processor      | 2.5 GHz quad-core processor          |
+| RAM            | 8 GB RAM                             |
+| Disk Space     | 50 GB free disk space                |
+| Screen         | 2560x1440 resolution (27-inch screen)|
+| Internet       | Internet access                      |
+
+**Important Hardware Notes:**
+
+- EDYOU OS currently supports only x86_64 architecture. If you're using a different architecture (e.g., ARM), you won't be able to install EDYOU OS. (ARM is not supported.)
+- EDYOU OS supports only ACPI-compliant hardware. If your hardware is not ACPI-compliant, installation may fail. (Legacy hardware is not supported.)
+- EDYOU OS supports both UEFI and BIOS boot firmware. Ensure your hardware is ACPI-compliant for proper installation. (U-Boot is not supported.)
+
+---
+
+## Installation Guide
+
+1. Download the EDYOU OS ISO file from the official site: [EDYOU OS Downloads](https://edyou-systems.github.io/EDYOUOS/#download)
+2. Create a bootable USB drive using tools like Rufus or Etcher.
+3. Boot your computer from the USB drive and follow the on-screen instructions.
+4. Enjoy a fully open, privacy-friendly school operating system!
+
+Note: EDYOU OS is currently based on Ubuntu LTS version "questing." Official support is planned until 2026; this may change in future versions.
+
+### Build Instructions
+
+To build EDYOU OS yourself, use the included `Makefile`. Common commands:
 
 ```
 make                 (or `make current`)    Build current language
@@ -86,29 +85,29 @@ make clean                                  Remove build artifacts
 make bootstrap                              Validate environment and dependencies
 ```
 
-- Build-Parameter (Sprache, Zeitzone, Mirrors, Eingabemethoden usw.) werden in `./src/args.sh` konfiguriert. Passe diese Datei an, um das Build-Verhalten zu ändern.  
-- Erstellte ISO-Images und zugehörige Artefakte werden unter `./src/dist` abgelegt.
+- Build parameters (language, timezone, mirrors, input methods, etc.) are configured in `./src/args.sh`. Edit this file to change build behavior.
+- Generated ISO images and related artifacts are placed in `./src/dist`.
 
-Führe `make fast` aus, um die schnelle Konfiguration zu bauen (aktuell zuerst für `de_DE`, dann `en_US` konfiguriert).
+Run `make fast` to build the fast configuration (currently set for `de_DE` first, then `en_US`).
 
 ---
 
 ## Community & Support
 
-Diskutiere mit, stelle Fragen oder gib Feedback hier:  
+Join discussions, ask questions, or provide feedback here:  
 [GitHub Discussions](https://github.com/edyou-systems/EDYOU-OS/discussions)
 
 ---
 
-## Über EDYOU OS
+## About EDYOU OS
 
-EDYOU OS – ein zukunftsorientiertes Schul-Linux,  
-gebaut auf Freiheit, für Bildung gemacht und mit Fokus auf Datenschutz.
+EDYOU OS – a forward-thinking school Linux,  
+built on freedom, made for education, with a focus on privacy.
 
-Ideal für Schülerinnen und Schüler, Lehrkräfte und Bildungseinrichtungen, die eine moderne, stabile und quelloffene Umgebung suchen.
+Perfect for students, teachers, and educational institutions seeking a modern, stable, and open-source environment.
 
 ---
 
-## Lizenz
+## License
 
-Dieses Projekt steht unter der **GNU General Public License**. Weitere Informationen finden sich in der Datei [LICENSE](LICENSE).
+This project is licensed under the **GNU General Public License**. See the [LICENSE](LICENSE) file for more details.
