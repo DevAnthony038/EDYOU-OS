@@ -9,7 +9,7 @@ EDYOU OS is a school-first Linux distribution built for learners and educators. 
 
 Learn more at the official site: [EDYOU OS Website](https://edyou-os.vercel.app/)
 
-![EDYOU OS Screenshot](Image.png)
+![EDYOU OS Screenshot](desktop.png)
 
 ---
 
