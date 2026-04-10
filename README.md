@@ -110,6 +110,3 @@ EDYOU OS is a school-focused Linux platform designed to offer freedom, privacy, 
 ## License
 
 This project is licensed under the **GNU General Public License**. See the [LICENSE](LICENSE) file for details.
-Use Control + Shift + m to toggle the tab key moving focus. Alternatively, use esc then tab to move to the next interactive element on the page.
-Attach files by dragging & dropping, selecting or pasting them.
-Editing EDYOU-OS/README.md at main · DevAnthony038/EDYOU-OS
