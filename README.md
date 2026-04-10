@@ -11,7 +11,7 @@ Built on Ubuntu LTS, EDYOU OS offers a Windows-like interface along with the sta
 
 For more information, visit the official website: [EDYOU OS Website](https://edyou-os.vercel.app/)
 
-![EDYOU OS Screenshot](Image.png)
+![EDYOU OS Screenshot](Image.png) 
 
 ---
 
