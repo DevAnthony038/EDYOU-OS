@@ -9,7 +9,7 @@ EDYOU OS is a school-first Linux distribution built for learners and educators. 
 
 Learn more at the official site: [EDYOU OS Website](https://edyou-os.vercel.app/)
 
-![EDYOU OS Screenshot](Image.png)
+![EDYOU OS Screenshot](desktop.png)
 
 ---
 
@@ -30,19 +30,29 @@ Learn more at the official site: [EDYOU OS Website](https://edyou-os.vercel.app/
 
 EDYOU OS supports Secure Boot. Enabling Secure Boot during installation is recommended for better system security.
 
-### Minimum Requirements                                  ### Recommended Requirements                         
-                                                                                
-| Component    | Requirement      |                       | Component    | Requirement           |     
-|--------------|------------------|                       |--------------|-----------------------|         
-| Architecture | x86_64           |                       | Architecture | x86_64                |       
-| Firmware     | UEFI or BIOS     |                       | Firmware     | UEFI with Secure Boot |            
-| CPU          | 2 GHz processor  |                       | CPU          | 2.5 GHz quad-core     |                         
-| RAM          | 4 GB             |                       | RAM          | 8 GB                  |                          
-| Disk         | 20 GB free       |                       | Disk         | 50 GB free            |                                    
-| Display      | 1024×768         |                       | Display      | 2560×1440             |                             
-| Ports        | USB or DVD drive |                       | Internet     | Required              |                              
-                                                                
+### Minimum Requirements
 
+| Component | Requirement |
+|-----------|-------------|
+| Architecture | x86_64 |
+| Firmware | UEFI or BIOS |
+| CPU | 2 GHz processor |
+| RAM | 4 GB |
+| Disk | 20 GB free |
+| Display | 1024×768 |
+| Ports | USB or DVD drive |
+
+### Recommended Requirements
+
+| Component | Requirement |
+|-----------|-------------|
+| Architecture | x86_64 |
+| Firmware | UEFI with Secure Boot |
+| CPU | 2.5 GHz quad-core |
+| RAM | 8 GB |
+| Disk | 50 GB free |
+| Display | 2560×1440 |
+| Internet | Required |
 
 **Important:**
 
