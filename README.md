@@ -71,7 +71,7 @@ EDYOU OS supports Secure Boot. Enabling Secure Boot during installation is recom
 
 Enjoy a fully open, privacy-friendly operating system for education.
 
-> Note: EDYOU OS is currently based on Ubuntu LTS "questing." Official support is planned through 2026 and may change later.
+> Note: EDYOU OS is currently based on Ubuntu LTS "noble"
 
 ---
 
