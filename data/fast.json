@@ -1,0 +1,22 @@
+[
+    {
+        "lang_mode": "de_DE",
+        "lang_pack_code": "de",
+        "input_method_install": "",
+        "config_ibus_rime": "false",
+        "timezone": "Europe/Berlin",
+        "config_weather_location": "[(uint32 0, 'Berlin, Deutschland', uint32 0, '52.5200,13.4050')]",
+        "config_input_method": "[('xkb', 'de')]",
+        "live_firefox_mirror": "ppa.launchpadcontent.net"
+    },
+    {
+        "lang_mode": "en_US",
+        "lang_pack_code": "en",
+        "input_method_install": "",
+        "config_ibus_rime": "false",
+        "timezone": "America/Los_Angeles",
+        "config_weather_location": "[(uint32 0, 'San Francisco, California, United States', uint32 0, '37.7749295,-122.4194155')]",
+        "config_input_method": "[('xkb', 'us')]",
+        "live_firefox_mirror": "ppa.launchpadcontent.net"
+    }
+]
