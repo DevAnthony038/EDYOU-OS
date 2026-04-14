@@ -7638,7 +7638,6 @@ function buildParams( prefix, obj, traditional, add ) {
 			} else {
 				// If array item is non-scalar (array or object), encode its
 				// numeric index to resolve deserialization ambiguity issues.
-				// Note that rack (as of 1.0.0) can't currently deserialize
 				// nested arrays properly, and attempting to do so may cause
 				// a server error. Possible fixes are to modify rack's
 				// deserialization algorithm or to provide an option or flag

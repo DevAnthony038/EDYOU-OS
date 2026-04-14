@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #==========================
-# EDYOUOS 1.0.0 - Initial Setup Script
+# EDYOUOS - Initial Setup Script
 # This is the first version - no upgrade paths needed
 #==========================
 
@@ -9,7 +9,7 @@ set -e
 set -o pipefail
 set -u
 export DEBIAN_FRONTEND=noninteractive
-export LATEST_VERSION="1.0.0"
+export LATEST_VERSION="1.0.1"
 export CODE_NAME="noble"
 export OS_ID="EDYOUOS"
 
@@ -101,7 +101,7 @@ EOF"
 
 function main() {
     print_ok "============================================"
-    print_ok "EDYOUOS 1.0.0 - Initial System Setup"
+    print_ok "EDYOUOS ${LATEST_VERSION} - Initial System Setup"
     print_ok "============================================"
     
     ensureCurrentOsEdyouOs
@@ -112,7 +112,7 @@ function main() {
     
     print_ok ""
     print_ok "============================================"
-    print_ok "✓ EDYOUOS 1.0.0 setup completed! ╰(*°▽°*)╯"
+    print_ok "✓ EDYOUOS ${LATEST_VERSION} setup completed! ╰(*°▽°*)╯"
     print_ok "✓ System version: ${LATEST_VERSION}"
     print_ok "✓ Release codename: ${CODE_NAME}"
     print_ok "============================================"

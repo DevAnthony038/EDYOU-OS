@@ -3,7 +3,7 @@
 [![GPL licensed](https://img.shields.io/badge/license-GPL-blue.svg)](https://github.com/EDYOU-Systems/EDYOU-OS/blob/main/LICENSE)
 [![Discussions](https://img.shields.io/badge/discussions-join-blue)](https://github.com/EDYOU-Systems/EDYOU-OS/discussions)
 [![Website Status](https://img.shields.io/website?url=https%3A%2F%2Fedyou-os.vercel.app%2F)](https://edyou-os.vercel.app/)
-[![Latest Version](https://img.shields.io/badge/version-v1.0.0-red)](https://edyou-os.vercel.app/#download)
+[![Latest Version](https://img.shields.io/badge/version-v1.0.1-red)](https://edyou-os.vercel.app/#download)
 
 EDYOU OS is a school-first Linux distribution built for learners and educators. It blends Ubuntu LTS reliability with a polished, user-friendly desktop and a strong privacy focus.
 

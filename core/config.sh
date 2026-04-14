@@ -81,7 +81,7 @@ export TARGET_NAME="edyouos"
 export TARGET_BUSINESS_NAME="EDYOUOS"
 
 # Distribution version identifier.
-export TARGET_BUILD_VERSION="1.0.0"
+export TARGET_BUILD_VERSION="1.0.1"
 
 # Git branch or development fork identifier.
 export TARGET_BUILD_BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null || echo "main")
