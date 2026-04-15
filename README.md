@@ -30,35 +30,42 @@ Learn more at the official site: [EDYOU OS Website](https://edyou-os.vercel.app/
 
 EDYOU OS supports Secure Boot. Enabling Secure Boot during installation is recommended for better system security.
 
-### Minimum Requirements
+### System Requirements
 
-| Component    | Requirement      |
-|--------------|------------------|
-| Architecture | x86_64           |
-| Firmware     | UEFI or BIOS     |
-| CPU          | 2 GHz processor  |
-| RAM          | 4 GB             |
-| Disk         | 20 GB free       |
-| Display      | 1024×768         |
-| Ports        | USB or DVD drive |
-
-### Recommended Requirements
-
-| Component    | Requirement           |
-|--------------|-----------------------|
-| Architecture | x86_64                |
-| Firmware     | UEFI with Secure Boot |
-| CPU          | 2.5 GHz quad-core     |
-| RAM          | 8 GB                  |
-| Disk         | 50 GB free            |
-| Display      | 2560×1440             |
-| Internet     | Required              |
+| Component    | Minimum              | Recommended           |
+|--------------|----------------------|-----------------------|
+| Architecture | x86_64               | x86_64                |
+| Firmware     | UEFI or BIOS         | UEFI with Secure Boot |
+| CPU          | 2 GHz processor      | 2.5 GHz quad-core     |
+| RAM          | 4 GB                 | 8 GB                  |
+| Disk         | 20 GB free           | 50 GB free            |
+| Display      | 1024×768             | 2560×1440             |
+| Ports        | USB or DVD drive     | —                     |
+| Internet     | —                    | Required              |
 
 **Important:**
 
 - EDYOU OS only supports x86_64 architecture. ARM is not supported.
 - The system requires ACPI-compliant hardware; legacy systems may fail.
 - Both UEFI and BIOS boot modes are supported, but U-Boot is not.
+
+---
+
+## Versioning Structure
+
+EDYOU OS uses semantic versioning with three components: `MAJOR.MINOR.PATCH` (e.g., `1.0.0`)
+
+- **MAJOR (First digit)** — Ubuntu LTS Version Foundation
+  - Increments when a new Ubuntu LTS version is adopted
+  - Example: Currently at `1` (Ubuntu 24.04 LTS "Noble") → will become `2.0.0` when upgrading to the next LTS release
+
+- **MINOR (Second digit)** — Major Features & Breaking Changes
+  - Increments for significant software updates, major feature releases, or substantial system changes
+  - Example: `1.1.0`, `1.2.0`
+
+- **PATCH (Third digit)** — Bug Fixes & Minor Updates
+  - Increments for bug fixes, security patches, and minor improvements
+  - Example: `1.0.1`, `1.0.2`
 
 ---
 
@@ -90,7 +97,7 @@ Without seeders, torrents become unusable—even if the file is valid.
 #### Definitions:
 
 - **Seeder** = Someone who hosts the full file for others (very cool person! 😎 )
-- **Leecher** = Someone who is just downloading the ISO file through torrent (please become a seeder and help the community! 👈(ﾟヮﾟ👈) )
+- **Leecher** = Someone who is just downloading the ISO file through torrent (please become a seeder and help the community!)
 
 ---
 
