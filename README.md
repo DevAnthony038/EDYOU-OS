@@ -40,7 +40,7 @@ EDYOU OS supports Secure Boot. Enabling Secure Boot during installation is recom
 | RAM          | 4 GB                 | 8 GB                  |
 | Disk         | 20 GB free           | 50 GB free            |
 | Display      | 1024×768             | 2560×1440             |
-| Ports        | USB or DVD drive     | —                     |
+| Ports        | USB or DVD drive     | USB or DVD drive      |
 | Internet     | —                    | Required              |
 
 **Important:**
