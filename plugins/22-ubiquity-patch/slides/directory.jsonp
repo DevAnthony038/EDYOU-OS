@@ -1,45 +1,9 @@
 ubiquitySlideshowDirectoryCb({
-    "zh_CN": {
-        "slides": [
-            "apps.html",
-            "build.html",
-            "M365.html",
-            "privacy.html",
-            "root.html",
-            "support.html",
-            "welcome.html"
-        ],
-        "media": []
-    },
-    "zh_TW": {
-        "slides": [
-            "apps.html",
-            "build.html",
-            "M365.html",
-            "privacy.html",
-            "root.html",
-            "support.html",
-            "welcome.html"
-        ],
-        "media": []
-    },
-    "zh_HK": {
-        "slides": [
-            "apps.html",
-            "build.html",
-            "M365.html",
-            "privacy.html",
-            "root.html",
-            "support.html",
-            "welcome.html"
-        ],
-        "media": []
-    },
     "ja": {
         "slides": [
             "apps.html",
             "build.html",
-            "M365.html",
+            "onlyo.html",
             "privacy.html",
             "root.html",
             "support.html",
@@ -51,7 +15,7 @@ ubiquitySlideshowDirectoryCb({
         "slides": [
             "apps.html",
             "build.html",
-            "M365.html",
+            "onlyo.html",
             "privacy.html",
             "root.html",
             "support.html",
@@ -63,7 +27,7 @@ ubiquitySlideshowDirectoryCb({
         "slides": [
             "apps.html",
             "build.html",
-            "M365.html",
+            "onlyo.html",
             "privacy.html",
             "root.html",
             "support.html",
@@ -75,7 +39,7 @@ ubiquitySlideshowDirectoryCb({
         "slides": [
             "apps.html",
             "build.html",
-            "M365.html",
+            "onlyo.html",
             "privacy.html",
             "root.html",
             "support.html",
@@ -87,7 +51,7 @@ ubiquitySlideshowDirectoryCb({
         "slides": [
             "apps.html",
             "build.html",
-            "M365.html",
+            "onlyo.html",
             "privacy.html",
             "root.html",
             "support.html",
@@ -99,7 +63,7 @@ ubiquitySlideshowDirectoryCb({
         "slides": [
             "apps.html",
             "build.html",
-            "M365.html",
+            "onlyo.html",
             "privacy.html",
             "root.html",
             "support.html",
@@ -111,7 +75,7 @@ ubiquitySlideshowDirectoryCb({
         "slides": [
             "apps.html",
             "build.html",
-            "M365.html",
+            "onlyo.html",
             "privacy.html",
             "root.html",
             "support.html",
@@ -123,7 +87,7 @@ ubiquitySlideshowDirectoryCb({
         "slides": [
             "apps.html",
             "build.html",
-            "M365.html",
+            "onlyo.html",
             "privacy.html",
             "root.html",
             "support.html",
@@ -135,7 +99,7 @@ ubiquitySlideshowDirectoryCb({
         "slides": [
             "apps.html",
             "build.html",
-            "M365.html",
+            "onlyo.html",
             "privacy.html",
             "root.html",
             "support.html",
@@ -147,7 +111,7 @@ ubiquitySlideshowDirectoryCb({
         "slides": [
             "apps.html",
             "build.html",
-            "M365.html",
+            "onlyo.html",
             "privacy.html",
             "root.html",
             "support.html",
@@ -159,7 +123,7 @@ ubiquitySlideshowDirectoryCb({
         "slides": [
             "apps.html",
             "build.html",
-            "M365.html",
+            "onlyo.html",
             "privacy.html",
             "root.html",
             "support.html",
@@ -171,7 +135,7 @@ ubiquitySlideshowDirectoryCb({
         "slides": [
             "apps.html",
             "build.html",
-            "M365.html",
+            "onlyo.html",
             "privacy.html",
             "root.html",
             "support.html",
@@ -183,7 +147,7 @@ ubiquitySlideshowDirectoryCb({
         "slides": [
             "apps.html",
             "build.html",
-            "M365.html",
+            "onlyo.html",
             "privacy.html",
             "root.html",
             "support.html",
@@ -195,7 +159,7 @@ ubiquitySlideshowDirectoryCb({
         "slides": [
             "apps.html",
             "build.html",
-            "M365.html",
+            "onlyo.html",
             "privacy.html",
             "root.html",
             "support.html",
@@ -207,7 +171,7 @@ ubiquitySlideshowDirectoryCb({
         "slides": [
             "apps.html",
             "build.html",
-            "M365.html",
+            "onlyo.html",
             "privacy.html",
             "root.html",
             "support.html",
@@ -219,7 +183,7 @@ ubiquitySlideshowDirectoryCb({
         "slides": [
             "apps.html",
             "build.html",
-            "M365.html",
+            "onlyo.html",
             "privacy.html",
             "root.html",
             "support.html",

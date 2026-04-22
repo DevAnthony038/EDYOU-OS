@@ -5,13 +5,13 @@ set -u                  # treat unset variable as error
 # if DEFAULT_APPS contains shotwell:
 if [[ $DEFAULT_APPS =~ "shotwell" ]]; then
     print_ok "Patching Shotwell localization..."
-    sed -i "/^Name=/a Name[zh_CN]=å›¾åº“" /usr/share/applications/org.gnome.Shotwell.desktop
-    sed -i "/^Name=/a Name[zh_TW]=åœ–åº«" /usr/share/applications/org.gnome.Shotwell.desktop
-    sed -i "/^Name=/a Name[zh_HK]=åœ–åº«" /usr/share/applications/org.gnome.Shotwell.desktop
+    sed -i "/^Name=/a Name#ZH#=å›¾åº“" /usr/share/applications/org.gnome.Shotwell.desktop
+    sed -i "/^Name=/a Name[zh_TW]=åœ-åº«" /usr/share/applications/org.gnome.Shotwell.desktop
+    sed -i "/^Name=/a Name[zh_HK]=åœ-åº«" /usr/share/applications/org.gnome.Shotwell.desktop
     sed -i "/^Name=/a Name[ja_JP]=å†™çœŸ" /usr/share/applications/org.gnome.Shotwell.desktop
     sed -i "/^Name=/a Name[ko_KR]=ì‚¬ì§„" /usr/share/applications/org.gnome.Shotwell.desktop
     sed -i "/^Name=/a Name[vi_VN]=áº¢nh" /usr/share/applications/org.gnome.Shotwell.desktop
-    sed -i "/^Name=/a Name[th_TH]=à¸£à¸¹à¸›à¸ à¸²à¸ž" /usr/share/applications/org.gnome.Shotwell.desktop
+    sed -i "/^Name=/a Name[th_TH]=à¸£à¸¹à¸›à¸à¸²à¸ž" /usr/share/applications/org.gnome.Shotwell.desktop
     sed -i "/^Name=/a Name[de_DE]=Fotos" /usr/share/applications/org.gnome.Shotwell.desktop
     sed -i "/^Name=/a Name[fr_FR]=Photos" /usr/share/applications/org.gnome.Shotwell.desktop
     sed -i "/^Name=/a Name[es_ES]=Fotos" /usr/share/applications/org.gnome.Shotwell.desktop
@@ -24,9 +24,9 @@ if [[ $DEFAULT_APPS =~ "shotwell" ]]; then
     sed -i "/^Name=/a Name[sv_SE]=Foton" /usr/share/applications/org.gnome.Shotwell.desktop
     sed -i "/^Name=/a Name[pl_PL]=ZdjÄ™cia" /usr/share/applications/org.gnome.Shotwell.desktop
     sed -i "/^Name=/a Name[tr_TR]=FotoÄŸraflar" /usr/share/applications/org.gnome.Shotwell.desktop
-    sed -i "/^X-GNOME-FullName=/a X-GNOME-FullName[zh_CN]=å›¾åº“" /usr/share/applications/org.gnome.Shotwell.desktop
-    sed -i "/^X-GNOME-FullName=/a X-GNOME-FullName[zh_TW]=åœ–åº«" /usr/share/applications/org.gnome.Shotwell.desktop
-    sed -i "/^X-GNOME-FullName=/a X-GNOME-FullName[zh_HK]=åœ–åº«" /usr/share/applications/org.gnome.Shotwell.desktop
+    sed -i "/^X-GNOME-FullName=/a X-GNOME-FullName#ZH#=å›¾åº“" /usr/share/applications/org.gnome.Shotwell.desktop
+    sed -i "/^X-GNOME-FullName=/a X-GNOME-FullName[zh_TW]=åœ-åº«" /usr/share/applications/org.gnome.Shotwell.desktop
+    sed -i "/^X-GNOME-FullName=/a X-GNOME-FullName[zh_HK]=åœ-åº«" /usr/share/applications/org.gnome.Shotwell.desktop
     sed -i "/^X-GNOME-FullName=/a X-GNOME-FullName[ja_JP]=å†™çœŸ" /usr/share/applications/org.gnome.Shotwell.desktop
     sed -i "/^X-GNOME-FullName=/a X-GNOME-FullName[ko_KR]=ì‚¬ì§„" /usr/share/applications/org.gnome.Shotwell.desktop
     sed -i "/^X-GNOME-FullName=/a X-GNOME-FullName[vi_VN]=áº¢nh" /usr/share/applications/org.gnome.Shotwell.desktop
@@ -48,7 +48,7 @@ fi
 
 if [[ $DEFAULT_APPS =~ "rhythmbox" ]]; then
     print_ok "Patching rhythmbox localization..."
-    sed -i "/^Name=Rhythmbox/a Name[zh_CN]=éŸ³ä¹" /usr/share/applications/org.gnome.Rhythmbox3.desktop
+    sed -i "/^Name=Rhythmbox/a Name#ZH#=éŸ³ä¹" /usr/share/applications/org.gnome.Rhythmbox3.desktop
     sed -i "/^Name=Rhythmbox/a Name[zh_TW]=éŸ³æ¨‚" /usr/share/applications/org.gnome.Rhythmbox3.desktop
     sed -i "/^Name=Rhythmbox/a Name[zh_HK]=éŸ³æ¨‚" /usr/share/applications/org.gnome.Rhythmbox3.desktop
     sed -i "/^Name=Rhythmbox/a Name[ja_JP]=éŸ³æ¥½" /usr/share/applications/org.gnome.Rhythmbox3.desktop
@@ -67,7 +67,7 @@ if [[ $DEFAULT_APPS =~ "rhythmbox" ]]; then
     sed -i "/^Name=Rhythmbox/a Name[sv_SE]=Musik" /usr/share/applications/org.gnome.Rhythmbox3.desktop
     sed -i "/^Name=Rhythmbox/a Name[pl_PL]=Muzyka" /usr/share/applications/org.gnome.Rhythmbox3.desktop
     sed -i "/^Name=Rhythmbox/a Name[tr_TR]=MÃ¼zik" /usr/share/applications/org.gnome.Rhythmbox3.desktop
-    sed -i "/^X-GNOME-FullName=/a X-GNOME-FullName[zh_CN]=éŸ³ä¹" /usr/share/applications/org.gnome.Rhythmbox3.desktop
+    sed -i "/^X-GNOME-FullName=/a X-GNOME-FullName#ZH#=éŸ³ä¹" /usr/share/applications/org.gnome.Rhythmbox3.desktop
     sed -i "/^X-GNOME-FullName=/a X-GNOME-FullName[zh_TW]=éŸ³æ¨‚" /usr/share/applications/org.gnome.Rhythmbox3.desktop
     sed -i "/^X-GNOME-FullName=/a X-GNOME-FullName[zh_HK]=éŸ³æ¨‚" /usr/share/applications/org.gnome.Rhythmbox3.desktop
     sed -i "/^X-GNOME-FullName=/a X-GNOME-FullName[ja_JP]=éŸ³æ¥½" /usr/share/applications/org.gnome.Rhythmbox3.desktop
@@ -91,12 +91,12 @@ fi
 
 if [ $DEFAULT_APPS =~ "baobab" ]; then
     print_ok "Patching baobab localization..."
-    sed -i "/^Name=/a Name[zh_CN]=ç£ç›˜åˆ†æž" /usr/share/applications/org.gnome.baobab.desktop
+    sed -i "/^Name=/a Name#ZH#=ç£ç›˜åˆ†æž" /usr/share/applications/org.gnome.baobab.desktop
     sed -i "/^Name=/a Name[zh_TW]=ç£ç¢Ÿåˆ†æž" /usr/share/applications/org.gnome.baobab.desktop
     sed -i "/^Name=/a Name[zh_HK]=ç£ç¢Ÿåˆ†æž" /usr/share/applications/org.gnome.baobab.desktop
     sed -i "/^Name=/a Name[ja_JP]=ãƒ‡ã‚£ã‚¹ã‚¯ä½¿ç”¨çŠ¶æ³" /usr/share/applications/org.gnome.baobab.desktop
     sed -i "/^Name=/a Name[ko_KR]=ë””ìŠ¤í¬ ì‚¬ìš©ëŸ‰ ë¶„ì„" /usr/share/applications/org.gnome.baobab.desktop
-    sed -i "/^Name=/a Name[vi_VN]=PhÃ¢n tÃ­ch Ä‘Ä©a" /usr/share/applications/org.gnome.baobab.desktop
+    sed -i "/^Name=/a Name[vi_VN]=PhÃ¢n tÃch Ä'Ä©a" /usr/share/applications/org.gnome.baobab.desktop
     sed -i "/^Name=/a Name[th_TH]=à¸§à¸´à¹€à¸„à¸£à¸²à¸°à¸«à¹Œà¸à¸²à¸£à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸”à¸´à¸ªà¸à¹Œ" /usr/share/applications/org.gnome.baobab.desktop
     sed -i "/^Name=/a Name[de_DE]=Festplattenbelegung" /usr/share/applications/org.gnome.baobab.desktop
     sed -i "/^Name=/a Name[fr_FR]=Analyseur d'utilisation des disques" /usr/share/applications/org.gnome.baobab.desktop
@@ -110,12 +110,12 @@ if [ $DEFAULT_APPS =~ "baobab" ]; then
     sed -i "/^Name=/a Name[sv_SE]=DiskanvÃ¤ndning" /usr/share/applications/org.gnome.baobab.desktop
     sed -i "/^Name=/a Name[pl_PL]=Analiza uÅ¼ycia dysku" /usr/share/applications/org.gnome.baobab.desktop
     sed -i "/^Name=/a Name[tr_TR]=Disk KullanÄ±m Analizi" /usr/share/applications/org.gnome.baobab.desktop
-    sed -i "/^X-GNOME-FullName=/a X-GNOME-FullName[zh_CN]=ç£ç›˜åˆ†æž" /usr/share/applications/org.gnome.baobab.desktop
+    sed -i "/^X-GNOME-FullName=/a X-GNOME-FullName#ZH#=ç£ç›˜åˆ†æž" /usr/share/applications/org.gnome.baobab.desktop
     sed -i "/^X-GNOME-FullName=/a X-GNOME-FullName[zh_TW]=ç£ç¢Ÿåˆ†æž" /usr/share/applications/org.gnome.baobab.desktop
     sed -i "/^X-GNOME-FullName=/a X-GNOME-FullName[zh_HK]=ç£ç¢Ÿåˆ†æž" /usr/share/applications/org.gnome.baobab.desktop
     sed -i "/^X-GNOME-FullName=/a X-GNOME-FullName[ja_JP]=ãƒ‡ã‚£ã‚¹ã‚¯ä½¿ç”¨çŠ¶æ³" /usr/share/applications/org.gnome.baobab.desktop
     sed -i "/^X-GNOME-FullName=/a X-GNOME-FullName[ko_KR]=ë””ìŠ¤í¬ ì‚¬ìš©ëŸ‰ ë¶„ì„" /usr/share/applications/org.gnome.baobab.desktop
-    sed -i "/^X-GNOME-FullName=/a X-GNOME-FullName[vi_VN]=PhÃ¢n tÃ­ch Ä‘Ä©a" /usr/share/applications/org.gnome.baobab.desktop
+    sed -i "/^X-GNOME-FullName=/a X-GNOME-FullName[vi_VN]=PhÃ¢n tÃch Ä'Ä©a" /usr/share/applications/org.gnome.baobab.desktop
     sed -i "/^X-GNOME-FullName=/a X-GNOME-FullName[th_TH]=à¸§à¸´à¹€à¸„à¸£à¸²à¸°à¸«à¹Œà¸à¸²à¸£à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸”à¸´à¸ªà¸à¹Œ" /usr/share/applications/org.gnome.baobab.desktop
     sed -i "/^X-GNOME-FullName=/a X-GNOME-FullName[de_DE]=Festplattenbelegung" /usr/share/applications/org.gnome.baobab.desktop
     sed -i "/^X-GNOME-FullName=/a X-GNOME-FullName[fr_FR]=Analyseur d'utilisation des disques" /usr/share/applications/org.gnome.baobab.desktop
@@ -138,12 +138,11 @@ if [[ $DEFAULT_APPS =~ "qalculate" ]]; then
 
     # Map of locale codes â†’ translated application name
     declare -A LOCALIZED_NAMES=(
-        [zh_CN]="è®¡ç®—å™¨"
         [zh_TW]="è¨ˆç®—å™¨"
         [zh_HK]="è¨ˆç®—å™¨"
         [ja_JP]="è¨ˆç®—æ©Ÿ"
         [ko_KR]="ê³„ì‚°ê¸°"
-        [vi_VN]="MÃ¡y tÃ­nh"
+        [vi_VN]="MÃ¡y tÃnh"
         [th_TH]="à¹€à¸„à¸£à¸·à¹ˆà¸­à¸‡à¸„à¸´à¸”à¹€à¸¥à¸‚"
         [de_DE]="Taschenrechner"
         [fr_FR]="Calculatrice"

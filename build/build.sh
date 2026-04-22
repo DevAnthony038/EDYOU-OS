@@ -10,6 +10,21 @@ PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 source "$PROJECT_ROOT/core/logging.sh"
 source "$PROJECT_ROOT/core/config.sh"
 
+# Display EDYOU OS ASCII Logo in Green
+echo -e "${Green}███████╗██████╗ ██╗   ██╗ ██████╗ ██╗   ██╗     ██████╗ ███████╗${Font}"
+echo -e "${Green}██╔════╝██╔══██╗╚██╗ ██╔╝██╔═══██╗██║   ██║    ██╔═══██╗██╔════╝${Font}"
+echo -e "${Green}█████╗  ██║  ██║ ╚████╔╝ ██║   ██║██║   ██║    ██║   ██║███████╗${Font}"
+echo -e "${Green}██╔══╝  ██║  ██║  ╚██╔╝  ██║   ██║██║   ██║    ██║   ██║╚════██║${Font}"
+echo -e "${Green}███████╗██████╔╝   ██║   ╚██████╔╝╚██████╔╝    ╚██████╔╝███████║${Font}"
+echo -e "${Green}╚══════╝╚═════╝    ╚═╝    ╚═════╝  ╚═════╝      ╚═════╝ ╚══════╝${Font}"
+echo ""
+print_ok "Starting EDYOUOS build process..."
+print_ok "Target business name: $TARGET_BUSINESS_NAME"
+print_ok "Target build version: $TARGET_BUILD_VERSION"
+print_ok "Target Ubuntu version: $TARGET_UBUNTU_VERSION"
+print_ok "Target Ubuntu mirror: $BUILD_UBUNTU_MIRROR"
+echo ""
+
 function bind_signal() {
     print_ok "Bind signal..."
     trap umount_on_exit EXIT

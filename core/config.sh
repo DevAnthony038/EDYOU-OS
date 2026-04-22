@@ -29,7 +29,7 @@ export INTERACTIVE="-y"
 #================================================================================
 
 # Primary locale for the target system.
-# Supported locales: en_US, en_GB, zh_CN, zh_TW, zh_HK, ja_JP, ko_KR,
+# Supported locales: en_US, en_GB, ja_JP, ko_KR,
 # vi_VN, th_TH, de_DE, fr_FR, es_ES, ru_RU, it_IT, pt_BR, pt_PT,
 # ar_SA, nl_NL, sv_SE, pl_PL, tr_TR
 export LANG_MODE="de_DE"
@@ -81,7 +81,7 @@ export TARGET_NAME="edyouos"
 export TARGET_BUSINESS_NAME="EDYOUOS"
 
 # Distribution version identifier.
-export TARGET_BUILD_VERSION="1.0.1"
+export TARGET_BUILD_VERSION="1.0.2"
 
 # Git branch or development fork identifier.
 export TARGET_BUILD_BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null || echo "main")
@@ -176,6 +176,7 @@ fi
 #   deb    : Install from official .deb package
 #   flatpak: Install from Flatpak (functions regardless of STORE_PROVIDER)
 #   snap   : Install from Snap Store
+
 export ONLYOFFICE_PROVIDER="flatpak"
 
 #================================================================================

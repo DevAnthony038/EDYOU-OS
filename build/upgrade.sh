@@ -9,7 +9,7 @@ set -e
 set -o pipefail
 set -u
 export DEBIAN_FRONTEND=noninteractive
-export LATEST_VERSION="1.0.1"
+export LATEST_VERSION="1.0.2"
 export CODE_NAME="noble"
 export OS_ID="EDYOUOS"
 
@@ -112,7 +112,7 @@ function main() {
     
     print_ok ""
     print_ok "============================================"
-    print_ok "✓ EDYOUOS ${LATEST_VERSION} setup completed! ╰(*°▽°*)╯"
+    print_ok "✓ EDYOUOS ${LATEST_VERSION} setup completed!"
     print_ok "✓ System version: ${LATEST_VERSION}"
     print_ok "✓ Release codename: ${CODE_NAME}"
     print_ok "============================================"

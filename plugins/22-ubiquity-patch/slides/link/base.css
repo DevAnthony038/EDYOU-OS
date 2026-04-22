@@ -28,7 +28,7 @@ html, body {
 	margin:0;
 	padding:0;
 
-	background-color:#1471d8;
+	background-color:#ffffff;
 
 	font-family:'Ubuntu', 'UbuntuBeta', sans-serif;
 	font-size:12px;
@@ -130,7 +130,7 @@ strong {
 	font-size:24px;
 	line-height:30px;
 	font-weight:normal;
-	color: #f9f9f9; /*#DED9CB; */
+	color: #DED9CB; /*#DED9CB; */
 }
 .header > .slidetitle img {
 	display: block;
@@ -146,8 +146,6 @@ strong {
 	background-image:url('background.png');
 	background-repeat: no-repeat;
 	background-size: contain;
-	/* move this to #slideshow if we don't want the background image to move with slides */
-	/* background-image:url('background.png'); */
 }
 
 .main.wide {

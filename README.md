@@ -1,7 +1,7 @@
-# EDYOU OS – Open-Source School Linux
+# EDYOU OS - Open-Source School Linux
 
-[![GPL licensed](https://img.shields.io/badge/license-GPL-blue.svg)](https://github.com/EDYOU-Systems/EDYOU-OS/blob/main/LICENSE)
-[![Discussions](https://img.shields.io/badge/discussions-join-blue)](https://github.com/EDYOU-Systems/EDYOU-OS/discussions)
+[![GPL licensed](https://img.shields.io/badge/license-GPL-blue.svg)](https://github.com/DevAnthony038/EDYOU-OS/blob/main/LICENSE)
+[![Discussions](https://img.shields.io/badge/discussions-join-blue)](https://github.com/DevAnthony038/EDYOU-OS/discussions)
 [![Website Status](https://img.shields.io/website?url=https%3A%2F%2Fedyou-os.vercel.app%2F)](https://edyou-os.vercel.app/)
 [![Latest Version](https://img.shields.io/badge/version-v1.0.1-red)](https://edyou-os.vercel.app/#download)
 
@@ -71,7 +71,7 @@ EDYOU OS uses semantic versioning with three components: `MAJOR.MINOR.PATCH` (e.
 
 ## Installation Guide
 
-1. Download the ISO from: [EDYOU OS Downloads](https://edyou-systems.github.io/EDYOUOS/#download)
+1. Download the ISO from: [EDYOU OS Downloads](https://edyou-os.vercel.app/index.html#download)
 2. Create a bootable USB with Rufus, Etcher, or a similar tool.
 3. Boot the computer from that USB.
 4. Follow the installer prompts.
@@ -90,7 +90,7 @@ In a BitTorrent network, files are shared between users rather than downloaded f
 
 If you want a healthy, fast, and reliable torrent ecosystem, it is important to continue seeding after your download is finished. Every seeder increases availability, improves download speeds for others, and prevents torrents from dying out.
 
-Without seeders, torrents become unusable—even if the file is valid.
+Without seeders, torrents become unusable even if the file is valid.
 
 **Be a Seeder, not just a Leecher.**
 
@@ -123,7 +123,7 @@ make bootstrap      # Validate environment and dependencies
 
 Join the community and ask questions here:
 
-[GitHub Discussions](https://github.com/edyou-systems/EDYOU-OS/discussions)
+[GitHub Discussions](https://github.com/DevAnthony038/EDYOU-OS/discussions)
 
 ---
 
