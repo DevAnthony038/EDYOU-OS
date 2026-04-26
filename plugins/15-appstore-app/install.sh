@@ -67,7 +67,7 @@ elif [ "$STORE_PROVIDER" == "snap" ]; then
     judge "Install snap store"
 elif [ "$STORE_PROVIDER" == "web" ]; then
     print_ok "Adding new app called EDYOUOS Software..."
-    cat << EOF > /usr/share/applications/EDYOUOS-software.desktop
+    cat << EOF > /usr/share/applications/edyouos-software.desktop
 [Desktop Entry]
 Name=Apps Store
 GenericName=Apps Store
