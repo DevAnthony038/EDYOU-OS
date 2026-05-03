@@ -23,6 +23,7 @@ apt install $INTERACTIVE \
     firmware-sof-signed \
     grub-common \
     grub2-common \
+    gdm-settings \
     hwdata \
     init \
     iproute2 \

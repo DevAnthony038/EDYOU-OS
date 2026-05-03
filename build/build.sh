@@ -10,13 +10,15 @@ PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 source "$PROJECT_ROOT/core/logging.sh"
 source "$PROJECT_ROOT/core/config.sh"
 
-# Display EDYOU OS ASCII Logo in Green
-echo -e "${Green}███████╗██████╗ ██╗   ██╗ ██████╗ ██╗   ██╗     ██████╗ ███████╗${Font}"
-echo -e "${Green}██╔════╝██╔══██╗╚██╗ ██╔╝██╔═══██╗██║   ██║    ██╔═══██╗██╔════╝${Font}"
-echo -e "${Green}█████╗  ██║  ██║ ╚████╔╝ ██║   ██║██║   ██║    ██║   ██║███████╗${Font}"
-echo -e "${Green}██╔══╝  ██║  ██║  ╚██╔╝  ██║   ██║██║   ██║    ██║   ██║╚════██║${Font}"
-echo -e "${Green}███████╗██████╔╝   ██║   ╚██████╔╝╚██████╔╝    ╚██████╔╝███████║${Font}"
-echo -e "${Green}╚══════╝╚═════╝    ╚═╝    ╚═════╝  ╚═════╝      ╚═════╝ ╚══════╝${Font}"
+
+function LogoandInfo() {
+# Display EDYOU OS ASCII Logo in Blue for a badss start of the build process ヾ(⌐■_■)ノ
+echo -e "${Blue}███████╗██████╗ ██╗   ██╗ ██████╗ ██╗   ██╗     ██████╗ ███████╗${Font}"
+echo -e "${Blue}██╔════╝██╔══██╗╚██╗ ██╔╝██╔═══██╗██║   ██║    ██╔═══██╗██╔════╝${Font}"
+echo -e "${Blue}█████╗  ██║  ██║ ╚████╔╝ ██║   ██║██║   ██║    ██║   ██║███████╗${Font}"
+echo -e "${Blue}██╔══╝  ██║  ██║  ╚██╔╝  ██║   ██║██║   ██║    ██║   ██║╚════██║${Font}"
+echo -e "${Blue}███████╗██████╔╝   ██║   ╚██████╔╝╚██████╔╝    ╚██████╔╝███████║${Font}"
+echo -e "${Blue}╚══════╝╚═════╝    ╚═╝    ╚═════╝  ╚═════╝      ╚═════╝ ╚══════╝${Font}"
 echo ""
 print_ok "Starting EDYOUOS build process..."
 print_ok "Target business name: $TARGET_BUSINESS_NAME"
@@ -24,6 +26,7 @@ print_ok "Target build version: $TARGET_BUILD_VERSION"
 print_ok "Target Ubuntu version: $TARGET_UBUNTU_VERSION"
 print_ok "Target Ubuntu mirror: $BUILD_UBUNTU_MIRROR"
 echo ""
+}
 
 function bind_signal() {
     print_ok "Bind signal..."
@@ -31,6 +34,8 @@ function bind_signal() {
     judge "Bind signal"
 }
 
+# Cleans up any previous build artifacts to ensure a fresh build enviromnent.
+# and also ensures that any mounted filesystems from previous builds are unmounted to prevent conflicts during the new build process.
 function clean() {
     print_ok "Cleaning up..."
     sudo umount "$PROJECT_ROOT/build/new_building_os/sys" || sudo umount -lf "$PROJECT_ROOT/build/new_building_os/sys" || true
@@ -47,6 +52,7 @@ function clean() {
     judge "Clean up iso"
 }
 
+# Sets up the host environment by installing necessary tools, creating required directories, and ensuring that plugin scripts are executable.
 function setup_host() {
     print_ok "Setting up host environment..."
     sudo apt update
@@ -359,6 +365,7 @@ function umount_on_exit() {
 }
 
 cd "$PROJECT_ROOT/build"
+LogoandInfo
 bind_signal
 clean
 setup_host

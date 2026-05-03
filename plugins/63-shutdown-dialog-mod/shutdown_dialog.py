@@ -47,6 +47,9 @@ class ShutdownDialog(Gtk.Window):
         self.set_keep_above(True)
         self.set_default_size(480, 250)
         self.set_size_request(480, 250)
+        
+        # Set window icon from Fluent Icon Theme
+        self.set_icon_name("system-shutdown-symbolic")
 
         screen = Gdk.Screen.get_default()
         visual = screen.get_rgba_visual()
@@ -207,7 +210,9 @@ class ShutdownDialog(Gtk.Window):
             pass
 
 def main():
-    if not os.environ.get("DISPLAY"):
+    # Allow running under X11 or Wayland sessions. Some Wayland sessions
+    # do not set DISPLAY but do set WAYLAND_DISPLAY — accept either.
+    if not (os.environ.get("DISPLAY") or os.environ.get("WAYLAND_DISPLAY")):
         sys.exit(1)
     Gtk.init()
     d = ShutdownDialog()

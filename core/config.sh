@@ -109,7 +109,7 @@ export TARGET_PACKAGE_REMOVE="
 #   web   : Provide web-based store access
 #   flatpak: Integrate Flatpak package manager
 #   snap  : Integrate Snap package manager
-export STORE_PROVIDER="web"
+export STORE_PROVIDER="flatpak"
 
 # Mirror URL for Flatpak repository.
 export FLATHUB_MIRROR=""
@@ -177,7 +177,7 @@ fi
 #   flatpak: Install from Flatpak (functions regardless of STORE_PROVIDER)
 #   snap   : Install from Snap Store
 
-export ONLYOFFICE_PROVIDER="flatpak"
+export ONLYOFFICE_PROVIDER="deb"
 
 #================================================================================
 # Input Method Configuration
