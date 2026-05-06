@@ -47,13 +47,32 @@ elif [ "$FIREFOX_PROVIDER" == "deb" ]; then
     }
 
     attempt=0
-    max_attemps=3
+    max_attempts=3
     add_ppa_success=0
-    while [ $attempt -lt $max_attemps ]; do
+    while [ $attempt -lt $max_attempts ]; do
         if add-apt-repository -y ppa:mozillateam/ppa >/dev/null 2>&1; then
             add_ppa_success=1
             break
         fi
+        attempt=$((attempt+1))
+        if [ $attempt -lt $max_attempts ]; then
+            print_warn "add-apt-repository failed (attempt $attempt/$max_attempts). Retrying in 5 seconds..."
+            sleep 5
+        fi
+    done
+    
+    if [ $add_ppa_success -eq 0 ]; then
+        print_error "add-apt-repository failed after $max_attempts attempts. Checking Launchpad status and falling back to manual source."
+        check_launchpad_status || true
+        codename=$(lsb_release -sc)
+        cat > /etc/apt/sources.list.d/mozillateam-ubuntu-ppa-${codename}.list <<EOF
+deb http://ppa.launchpadcontent.net/mozillateam/ppa/ubuntu ${codename} main
+EOF
+        chown root:root /etc/apt/sources.list.d/mozillateam-ubuntu-ppa-${codename}.list
+        print_warn "Manual sources file created. If 'apt update' fails due to a missing signing key,"
+        print_warn "import the PPA key manually (example):"
+        print_warn "  sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys <KEYID>"
+    fi
         attempt=$((attempt+1))
         if [ $attempt -lt $max_attemps ]; then
             print_warn "add-apt-repository failed (attempt $attempt/$max_attemps). Retrying in 5 seconds..."
