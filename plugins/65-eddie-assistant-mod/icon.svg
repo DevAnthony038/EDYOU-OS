@@ -1,0 +1,16 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Border (grau) -->
+  <rect x="24" y="24" width="464" height="464" rx="48" fill="none" stroke="#8a8a8a" stroke-opacity="0.35" stroke-width="6"></rect>
+
+  <!-- Stylized E (Glow) -->
+  <path d="M160 140 H340 
+           M160 256 H300 
+           M160 372 H340" stroke="#0066ff" stroke-opacity="0.2" stroke-width="70" stroke-linecap="round" stroke-linejoin="round"></path>
+
+  <!-- Stylized E (Main) -->
+  <path d="M160 140 H340 
+           M160 256 H300 
+           M160 372 H340" stroke="#0066ff" stroke-width="42" stroke-linecap="round" stroke-linejoin="round"></path>
+
+</svg>
