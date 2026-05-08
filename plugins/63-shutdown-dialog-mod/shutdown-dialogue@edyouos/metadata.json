@@ -1,0 +1,13 @@
+{
+  "name": "EDYOU OS Shutdown Dialog",
+  "description": "Shows shutdown dialog on Alt+F4 when no window is focused",
+  "uuid": "shutdown-dialogue@edyouos",
+  "shell-version": [
+    "45",
+    "46",
+    "47",
+    "48"
+  ],
+  "url": "https://edyouos.org",
+  "version": 1
+}

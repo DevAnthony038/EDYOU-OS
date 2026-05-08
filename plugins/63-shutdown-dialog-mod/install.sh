@@ -18,12 +18,7 @@ mkdir -p /usr/local/bin
 print_ok "Copying files..."
 cp shutdown_dialog.py /opt/edyou/shutdown-dialog/
 cp shutdown_listener.sh /opt/edyou/shutdown-dialog/
-cp shutdown-logo-light.png /opt/edyou/shutdown-dialog/
-cp shutdown-logo-dark.png /opt/edyou/shutdown-dialog/
-
-# Also copy logos to /usr/local/bin for the dialog to find them
-cp shutdown-logo-light.png /usr/local/bin/
-cp shutdown-logo-dark.png /usr/local/bin/
+# Logos are embedded directly in shutdown_dialog.py
 
 chmod +x /opt/edyou/shutdown-dialog/shutdown_dialog.py
 chmod +x /opt/edyou/shutdown-dialog/shutdown_listener.sh
@@ -37,7 +32,7 @@ print_ok "Setting up sudo permissions..."
 SUDOERS_FILE="/etc/sudoers.d/edyou-shutdown"
 
 if [ ! -f "$SUDOERS_FILE" ]; then
-    echo "root ALL=(ALL) NOPASSWD: /bin/systemctl poweroff, /bin/systemctl reboot, /bin/systemctl suspend, /usr/bin/logout" | sudo tee "$SUDOERS_FILE" > /dev/null
+    echo "%sudo ALL=(ALL) NOPASSWD: /usr/bin/python3 /opt/edyou/shutdown-dialog/shutdown_dialog.py, /usr/bin/systemctl poweroff, /usr/bin/systemctl reboot, /usr/bin/systemctl suspend" | sudo tee "$SUDOERS_FILE" > /dev/null
     sudo chmod 0440 "$SUDOERS_FILE"
 fi
 
@@ -67,26 +62,51 @@ mkdir -p /etc/xdg/autostart
 cat > /usr/local/bin/edyou-shutdown-autostart << 'EOF'
 #!/bin/bash
 # Autostart helper for EDYOU shutdown dialog.
-# Only start xbindkeys in X11 sessions — skip for Wayland.
-if [ -z "$DISPLAY" ] && [ "${XDG_SESSION_TYPE:-}" != "x11" ]; then
-    exit 0
-fi
+# On X11: ensure ~/.xbindkeysrc exists and start xbindkeys.
+# On Wayland: ensure GNOME dconf keybinding is registered.
 
-# Ensure user's xbindkeys config exists and start xbindkeys (X11)
-XFILE="$HOME/.xbindkeysrc"
-if [ ! -f "$XFILE" ]; then
-    cat > "$XFILE" <<'XEOF'
+SHUTDOWN_INDEX="custom5"
+SHUTDOWN_PATH="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/${SHUTDOWN_INDEX}/"
+
+# ---- X11 / xbindkeys path ----
+if [ -n "$DISPLAY" ] || [ "${XDG_SESSION_TYPE:-}" = "x11" ]; then
+    XFILE="$HOME/.xbindkeysrc"
+    if [ ! -f "$XFILE" ]; then
+        cat > "$XFILE" <<'XEOF'
 # EDYOU OS Shutdown Dialog
 "/opt/edyou/shutdown-dialog/shutdown_listener.sh"
 Alt + F4
 XEOF
-    chmod 600 "$XFILE"
+        chmod 600 "$XFILE"
+    fi
+
+    if command -v xbindkeys >/dev/null 2>&1; then
+        if ! pgrep -u "$(id -u)" -x xbindkeys > /dev/null; then
+            xbindkeys >/dev/null 2>&1 &
+        fi
+    fi
 fi
 
-# Start xbindkeys if available and not running for this user
-if command -v xbindkeys >/dev/null 2>&1; then
-    if ! pgrep -u "$(id -u)" -x xbindkeys > /dev/null; then
-        xbindkeys >/dev/null 2>&1 &
+# ---- Wayland / dconf + extension path (runs once per user) ----
+# Enable the GNOME Shell extension (primary Wayland mechanism)
+if command -v gnome-extensions >/dev/null 2>&1; then
+    gnome-extensions enable shutdown-dialogue@edyouos 2>/dev/null || true
+fi
+
+# Also register dconf custom5 binding as fallback (for non-GNOME or X11)
+if command -v dconf >/dev/null 2>&1; then
+    CURRENT=$(dconf read /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings 2>/dev/null || echo "")
+    if [ -z "$CURRENT" ] || [ "$CURRENT" = "@as []" ]; then
+        dconf write "${SHUTDOWN_PATH}binding" "'<Alt>F4'"
+        dconf write "${SHUTDOWN_PATH}command" "'bash -lc \"/opt/edyou/shutdown-dialog/shutdown_listener.sh\"'"
+        dconf write "${SHUTDOWN_PATH}name" "'EDYOU Shutdown'"
+        dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings "['${SHUTDOWN_PATH}']"
+    elif ! echo "$CURRENT" | grep -q "${SHUTDOWN_INDEX}"; then
+        NEW="${CURRENT%]}, '${SHUTDOWN_PATH}']"
+        dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings "$NEW"
+        dconf write "${SHUTDOWN_PATH}binding" "'<Alt>F4'"
+        dconf write "${SHUTDOWN_PATH}command" "'bash -lc \"/opt/edyou/shutdown-dialog/shutdown_listener.sh\"'"
+        dconf write "${SHUTDOWN_PATH}name" "'EDYOU Shutdown'"
     fi
 fi
 EOF
@@ -148,8 +168,8 @@ for d in /home/*; do
         user=$(basename "$d")
         if id "$user" >/dev/null 2>&1; then
             user_autostart_dir="$d/.config/autostart"
-            if [ ! -d "$user_autostart_dir" ]; then
-                mkdir -p "$user_autostart_dir"
+            mkdir -p "$user_autostart_dir"
+            if [ ! -f "$user_autostart_dir/edyou-shutdown.desktop" ]; then
                 cp /etc/xdg/autostart/edyou-shutdown.desktop "$user_autostart_dir/"
                 chown -R "$user:$user" "$user_autostart_dir"
             fi
@@ -168,14 +188,27 @@ for d in /home/*; do
     fi
 done
 
-# Create dconf system defaults to register a GNOME custom-keybinding (works under Wayland)
-print_ok "Creating dconf system default for GNOME custom keybinding..."
-mkdir -p /etc/dconf/db/local.d
-cat > /etc/dconf/db/local.d/00-edyou-shutdown << 'EOF'
-[org/gnome/settings-daemon/plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
+# ======================================================
+# GNOME Wayland custom keybinding (system dconf + GSettings)
+# Uses custom5 to avoid collision with plugin 39's custom0-4
+# NOTE: Does NOT touch plugin 39's skeleton dconf or root's dconf.
+# The autostart helper (run at graphical login) registers custom5
+# in the user's dconf where DBus is always available.
+# ======================================================
+print_ok "Setting up GNOME custom keybinding for Wayland..."
 
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+SHUTDOWN_CUSTOM_INDEX="custom5"
+SHUTDOWN_CUSTOM_PATH="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/${SHUTDOWN_CUSTOM_INDEX}/"
+
+# 1. Create system dconf default (fallback for users without user dconf override)
+#    Does NOT require DBus — reads text files, writes binary DB
+print_ok "Creating system dconf default..."
+mkdir -p /etc/dconf/db/local.d
+cat > /etc/dconf/db/local.d/00-edyou-shutdown << EOF
+[org/gnome/settings-daemon/plugins/media-keys]
+custom-keybindings=['${SHUTDOWN_CUSTOM_PATH}']
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/${SHUTDOWN_CUSTOM_INDEX}]
 name='EDYOU Shutdown'
 binding='<Alt>F4'
 command='bash -lc "/opt/edyou/shutdown-dialog/shutdown_listener.sh"'
@@ -198,9 +231,31 @@ else
     fi
 fi
 
-# Update system dconf database (best-effort)
+# Update system dconf database (reads text files, no DBus needed)
 if command -v dconf >/dev/null 2>&1; then
-    dconf update || true
+    if ! dconf update; then
+        print_warn "dconf update failed — GSettings override will serve as fallback"
+    fi
+fi
+
+# 2. Create GSettings override (more reliable than dconf on Wayland)
+#    Also does NOT require DBus
+print_ok "Creating GSettings override for GNOME..."
+GSETTINGS_OVERRIDE="/usr/share/glib-2.0/schemas/90-edyou-shutdown.gschema.override"
+mkdir -p /usr/share/glib-2.0/schemas
+cat > "$GSETTINGS_OVERRIDE" << EOF
+[org.gnome.settings-daemon.plugins.media-keys]
+custom-keybindings=['${SHUTDOWN_CUSTOM_PATH}']
+
+[org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.${SHUTDOWN_CUSTOM_INDEX}]
+name='EDYOU Shutdown'
+binding='<Alt>F4'
+command='bash -lc "/opt/edyou/shutdown-dialog/shutdown_listener.sh"'
+EOF
+
+# Compile GSettings schemas (no DBus needed)
+if command -v glib-compile-schemas >/dev/null 2>&1; then
+    glib-compile-schemas /usr/share/glib-2.0/schemas/ || true
 fi
 
 # Create a login script for future sessions
@@ -226,6 +281,33 @@ fi
 EOF
     chmod +x "$LOGIN_HOOK"
 fi
+
+# ======================================================
+# GNOME Shell Extension (primary Wayland mechanism)
+# ======================================================
+print_ok "Installing GNOME Shell extension..."
+
+EXT_UUID="shutdown-dialogue@edyouos"
+EXT_DIR="/usr/share/gnome-shell/extensions/${EXT_UUID}"
+
+mkdir -p "$EXT_DIR"
+mkdir -p "$EXT_DIR/schemas"
+
+cp -r "shutdown-dialogue@edyouos/extension.js" "$EXT_DIR/"
+cp -r "shutdown-dialogue@edyouos/metadata.json" "$EXT_DIR/"
+cp -r "shutdown-dialogue@edyouos/schemas/org.gnome.shell.extensions.shutdown-dialogue.gschema.xml" "$EXT_DIR/schemas/"
+
+# Compile schemas in the extension directory
+if command -v glib-compile-schemas >/dev/null 2>&1; then
+    glib-compile-schemas "$EXT_DIR/schemas/" || true
+fi
+
+# Also compile globally so GSettings override and extension schema are available
+if command -v glib-compile-schemas >/dev/null 2>&1; then
+    glib-compile-schemas /usr/share/glib-2.0/schemas/ || true
+fi
+
+print_ok "GNOME Shell extension installed in ${EXT_DIR}"
 
 print_ok "EDYOU OS Shutdown Dialog installed!"
 print_ok "Works for ALL users (existing and new)"

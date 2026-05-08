@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema path="/org/gnome/shell/extensions/shutdown-dialogue/" id="org.gnome.shell.extensions.shutdown-dialogue">
+    <key type="as" name="shutdown-shortcut">
+      <default>['&lt;Alt&gt;F4']</default>
+      <summary>Shutdown shortcut</summary>
+      <description>Keybinding to show the shutdown dialog when no window is focused</description>
+    </key>
+  </schema>
+</schemalist>
