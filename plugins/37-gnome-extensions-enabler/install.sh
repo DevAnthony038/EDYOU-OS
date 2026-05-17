@@ -2,6 +2,9 @@ set -e                  # exit on error
 set -o pipefail         # exit on pipeline error
 set -u                  # treat unset variable as error
 
+# This script enables the Gnome extensions for the target system.
+# It uses the gext command line tool to enable each extension for the root user, and then updates the metadata.json files of the extensions to ensure compatibility with Gnome 48.
+
 print_ok "Enabling gnome extensions for root..."
 /root/.local/bin/gext -F enable arcmenu@arcmenu.com
 /root/.local/bin/gext -F enable blur-my-shell@aunetx

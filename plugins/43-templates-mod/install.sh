@@ -2,6 +2,8 @@ set -e                  # exit on error
 set -o pipefail         # exit on pipeline error
 set -u                  # treat unset variable as error
 
+# This script configures the template files for new users.
+
 print_ok "Configuring templates..."
 mkdir -p /etc/skel/Templates
 touch /etc/skel/Templates/Text.txt

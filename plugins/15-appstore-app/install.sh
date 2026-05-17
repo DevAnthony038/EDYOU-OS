@@ -2,7 +2,7 @@ set -e                  # exit on error
 set -o pipefail         # exit on pipeline error
 set -u                  # treat unset variable as error
 
-
+# This script installs the app store for the target system.
 # STORE_PROVIDER = none, flatpak, web, snap
 
 if [ "$STORE_PROVIDER" == "none" ]; then

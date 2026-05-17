@@ -2,6 +2,8 @@ set -e                  # exit on error
 set -o pipefail         # exit on pipeline error
 set -u                  # treat unset variable as error
 
+# This script removes the hint for sudo for the target system.
+
 print_ok "Removing the hint for sudo"
 
 file=/etc/bash.bashrc

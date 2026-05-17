@@ -2,6 +2,10 @@ set -e                  # exit on error
 set -o pipefail         # exit on pipeline error
 set -u                  # treat unset variable as error
 
+# This script customizes the branding and legal information for the target system. 
+# It updates the lsb-release and os-release files with the target business name, build version, and Ubuntu version. 
+# It also patches the /etc/legal file with a custom message.
+
 print_ok "Customization complete. Updating lsb/os-release files"
 cat << EOF > /etc/lsb-release
 DISTRIB_ID=$TARGET_BUSINESS_NAME

@@ -2,6 +2,9 @@ set -e                  # exit on error
 set -o pipefail         # exit on pipeline error
 set -u                  # treat unset variable as error
 
+# This script installs the system tools for the target system.
+# This script should be run after the systemd and machine-id plugins, because some packages may depend on them.
+
 wait_network
 print_ok "Installing classroom-safe system packages..."
 apt install $INTERACTIVE \

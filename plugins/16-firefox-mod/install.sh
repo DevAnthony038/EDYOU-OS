@@ -2,6 +2,8 @@ set -e                  # exit on error
 set -o pipefail         # exit on pipeline error
 set -u                  # treat unset variable as error
 
+# This script installs the firefox for the target system.
+
 if [ "$FIREFOX_PROVIDER" == "none" ]; then
     print_ok "We don't need to install firefox, please check the config file"
 elif [ "$FIREFOX_PROVIDER" == "deb" ]; then

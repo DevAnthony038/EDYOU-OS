@@ -2,6 +2,10 @@ set -e                  # exit on error
 set -o pipefail         # exit on pipeline error
 set -u                  # treat unset variable as error
 
+# This script removes some of the unnecessary packages for the target system.
+# This is necessary to ensure that the target system does not contain any unnecessary packages (bloatware) to reduce the size of the target system.
+# The unnecessary packages are not needed for the target system, and they may cause issues with the target system if they are present.
+
 # remove unused and clean up apt cache
 print_ok "Removing unused packages..."
 apt autoremove -y --purge

@@ -2,6 +2,9 @@ set -e                  # exit on error
 set -o pipefail         # exit on pipeline error
 set -u                  # treat unset variable as error
 
+# This script sets the default applications for various file types and protocols on the target system using the xdg-mime command. 
+# It also copies the root user's default application settings to /etc/skel so that new users will have the same default applications when they log in for the first time.
+
 # Web with Mozila Firefox
 xdg-mime default firefox.desktop x-scheme-handler/http
 xdg-mime default firefox.desktop text/html

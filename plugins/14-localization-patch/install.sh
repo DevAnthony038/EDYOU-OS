@@ -2,6 +2,10 @@ set -e                  # exit on error
 set -o pipefail         # exit on pipeline error
 set -u                  # treat unset variable as error
 
+# This script patches the localization for the target system.
+# This is necessary because some applications may not have the correct localization for the target system, and this may cause issues with the target system.
+# This script should be run after the gnome-apps and fonts plugins, because some applications may depend on them.
+
 # if DEFAULT_APPS contains shotwell:
 if [[ $DEFAULT_APPS =~ "shotwell" ]]; then
     print_ok "Patching Shotwell localization..."

@@ -3,6 +3,14 @@ set -e
 set -o pipefail
 set -u
 
+# This script installs OnlyOffice on the target system.
+# The installation method can be configured using the ONLYOFFICE_PROVIDER environment variable.
+# The supported values for ONLYOFFICE_PROVIDER are:
+# - none: do not install OnlyOffice
+# - deb: install OnlyOffice from the official .deb package (default)
+# - flatpak: install OnlyOffice from flathub using flatpak
+# - snap: install OnlyOffice from snap store using snap
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(dirname "$(dirname "$SCRIPT_DIR")")"
 

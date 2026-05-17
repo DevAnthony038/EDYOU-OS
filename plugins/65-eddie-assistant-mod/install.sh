@@ -2,6 +2,10 @@ set -e                  # exit on error
 set -o pipefail         # exit on pipeline error
 set -u                  # treat unset variable as error
 
+# This script installs the Eddie AI Assistant for the target system.
+# Eddie is a cross-platform AI assistant that can help you with various tasks, such as homework, coding, and more.
+# It is designed to be a helpful companion for users of all ages and skill levels.
+
 EDDIE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 EDDIE_BIN="$EDDIE_DIR/Eddie"
 INSTALL_DIR="/opt/eddie"

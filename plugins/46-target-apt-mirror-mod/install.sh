@@ -2,6 +2,9 @@ set -e                  # exit on error
 set -o pipefail         # exit on pipeline error
 set -u                  # treat unset variable as error
 
+# This script sets up the apt sources for the target system. 
+# It uses the same mirror as the live system to ensure that the packages can be downloaded during the installation process.
+
 print_ok "Setting up apt sources..."
 
 MIRROR=$LIVE_UBUNTU_MIRROR

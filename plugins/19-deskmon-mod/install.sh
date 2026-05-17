@@ -2,6 +2,7 @@ set -e                  # exit on error
 set -o pipefail         # exit on pipeline error
 set -u                  # treat unset variable as error
 
+# This script installs the deskmon for the target system.
 # print_ok "Building deskmon.c"
 # sudo apt install pkgconf gcc
 # gcc -O2 $(pkg-config --cflags glib-2.0 gio-2.0) deskmon.c -o deskmon $(pkg-config --libs glib-2.0 gio-2.0)

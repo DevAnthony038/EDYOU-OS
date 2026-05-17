@@ -2,6 +2,8 @@ set -e                  # exit on error
 set -o pipefail         # exit on pipeline error
 set -u                  # treat unset variable as error
 
+# This script installs the software-properties-gtk for the target system.
+
 if [ "$INSTALL_MODIFIED_SOFTWARE_PROPERTIES_GTK" != "true" ]; then
     print_ok "We don't need to install software-properties-gtk, please check the config file"
     exit 0

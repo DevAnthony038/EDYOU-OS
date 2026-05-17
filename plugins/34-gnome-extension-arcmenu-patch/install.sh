@@ -2,6 +2,8 @@ set -e                  # exit on error
 set -o pipefail         # exit on pipeline error
 set -u                  # treat unset variable as error
 
+# This script patches the Arc Menu Gnome Extension for the target system.
+
 print_ok "Patching Arc Menu..."
 
 print_ok "Patch Arc Menu logo..."

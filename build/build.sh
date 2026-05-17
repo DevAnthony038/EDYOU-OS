@@ -4,6 +4,9 @@ set -e
 set -o pipefail
 set -u
 
+# This script is the main build script for the EDYOU OS project.
+# It orchestrates the entire build process, including setting up the environment, downloading the base system, running the plugin scripts in a chroot environment, and building the final ISO image.
+
 SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 

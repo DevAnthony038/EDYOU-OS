@@ -2,6 +2,9 @@ set -e                  # exit on error
 set -o pipefail         # exit on pipeline error
 set -u                  # treat unset variable as error
 
+# This script cleans and reinstalls the wallpaper for the target system.
+
+# Dark wallpaper
 print_ok "Cleaning and reinstalling wallpaper"
 rm /usr/share/gnome-background-properties/* -rf
 rm /usr/share/backgrounds/* -rf
@@ -19,6 +22,8 @@ cat << EOF > /usr/share/gnome-background-properties/fluent.dark.xml
 </wallpaper>
 </wallpapers>
 EOF
+
+# Light wallpaper
 cat << EOF > /usr/share/gnome-background-properties/fluent.light.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE wallpapers SYSTEM "gnome-wp-list.dtd">

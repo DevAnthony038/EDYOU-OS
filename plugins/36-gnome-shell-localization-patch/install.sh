@@ -1,7 +1,8 @@
 set -e                  # exit on error
 set -o pipefail         # exit on pipeline error
 set -u                  # treat unset variable as error
-# ...existing code...
+
+# This script patches the Gnome Shell localization for the target system to change "Pin to Dash" and "Unpin" to "Add to Taskbar" and "Remove from Taskbar" respectively.
 
 # Dictionary of localized strings for "Add to Taskbar" and "Unpin from Taskbar"
 declare -A taskbar_add_strings=(

@@ -2,6 +2,8 @@ set -e                  # exit on error
 set -o pipefail         # exit on pipeline error
 set -u                  # treat unset variable as error
 
+# This script installs the ubiquity for the target system.
+
 print_ok "Installing install tools..."
 apt install $INTERACTIVE \
     cryptsetup-initramfs \

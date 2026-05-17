@@ -2,6 +2,8 @@ set -e
 set -o pipefail
 set -u
 
+# This script installs a custom neofetch theme on the target system. It copies the neofetch script from the plugin directory to /usr/bin and makes it executable.
+
 source /root/plugins/logging.sh
 source /root/plugins/config.sh
 

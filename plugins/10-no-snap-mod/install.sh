@@ -2,6 +2,10 @@ set -e                  # exit on error
 set -o pipefail         # exit on pipeline error
 set -u                  # treat unset variable as error
 
+# This script removes snap packages and snapd for the target system.
+# This is necessary because snap packages may not be compatible with the target system, and snapd may cause issues with the target system.
+
+
 if [ "$STORE_PROVIDER" == "snap" ]; then
     print_ok "No need to remove snap packages because STORE_PROVIDER is set to snap, please check the config file"
 else

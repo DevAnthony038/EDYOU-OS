@@ -2,6 +2,10 @@ set -e                  # exit on error
 set -o pipefail         # exit on pipeline error
 set -u                  # treat unset variable as error
 
+# This script installs the EDYOU OS Shutdown Dialog for the target system.
+# The EDYOU OS Shutdown Dialog is a custom shutdown dialog that is triggered when the user presses Alt+F4 on the desktop.
+# It provides options to shutdown, reboot, suspend, or logout
+
 print_ok "Installing EDYOU OS Shutdown Dialog..."
 
 # Install dependencies

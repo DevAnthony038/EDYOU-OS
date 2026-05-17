@@ -2,10 +2,11 @@ set -e                  # exit on error
 set -o pipefail         # exit on pipeline error
 set -u                  # treat unset variable as error
 
-# dconf is a binary file. To apply default dconf to all users, we must:
-# - First apply the dconf settings to root user
-# - Then copy the dconf settings to /etc/skel
-# - Then remove the dconf settings from root user
+# This plugin is the heart of EDYOUOS. dconf.ini sets all the gnome settings, background images, icon and gtk theme, and other settings for the target system. 
+# It also patches the gdm3 greeter settings to use the edyouos-smaller.png as the background image.
+# The dconf settings are loaded using the dconf load command, which is a more reliable way to load dconf settings than using dconf write commands for each setting.
+# The script also ensures that the dbus session is properly exported before loading the dconf settings, which is necessary for the dconf load command to work correctly. 
+# Finally, it copies the root's dconf settings to /etc/skel so that new users will have the same settings as root when they log in for the first time.
 
 print_ok "Loading dconf settings"
 

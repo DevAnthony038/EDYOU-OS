@@ -2,6 +2,9 @@ set -e                  # exit on error
 set -o pipefail         # exit on pipeline error
 set -u                  # treat unset variable as error
 
+# This script installs the capser (live-boot) and kernel packages for the target system.
+# This script should be run after the systemd, machine-id, and initctl plugins, because some packages may depend on them.
+
 print_ok "Installing capser (live-boot)..."
 wait_network
 apt install $INTERACTIVE \

@@ -2,6 +2,8 @@ set -e                  # exit on error
 set -o pipefail         # exit on pipeline error
 set -u                  # treat unset variable as error
 
+# This script sets up the hostname and locales for the target system.
+
 print_ok "Setting up hostname..."
 echo "$TARGET_NAME" > /etc/hostname
 hostname "$TARGET_NAME"

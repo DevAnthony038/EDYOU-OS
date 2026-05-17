@@ -2,6 +2,8 @@ set -e                  # exit on error
 set -o pipefail         # exit on pipeline error
 set -u                  # treat unset variable as error
 
+# This script adds a new command "edyouos-upgrade" to the target system
+
 print_ok "Adding new command to this OS: edyouos-upgrade..."
 cp ./edyouos-upgrade.sh /usr/local/bin/edyouos-upgrade
 chmod +x /usr/local/bin/edyouos-upgrade

@@ -2,6 +2,9 @@ set -e                  # exit on error
 set -o pipefail         # exit on pipeline error
 set -u                  # treat unset variable as error
 
+# This script configures the locales and timezone for the target system. This is necessary to ensure that the target system has the correct locale and timezone settings.
+# The locale settings are configured using the LANG environment variable, which is set to the value of the LOCALE environment variable. The timezone settings are configured using the TIMEZONE environment variable, which is set to the value of the TIMEZONE environment variable.
+
 print_ok "Configuring locales..."
 dpkg-reconfigure locales
 judge "Configure locales"

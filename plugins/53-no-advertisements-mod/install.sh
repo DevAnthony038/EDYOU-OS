@@ -2,6 +2,8 @@ set -e                  # exit on error
 set -o pipefail         # exit on pipeline error
 set -u                  # treat unset variable as error
 
+# This script ensures that the Ubuntu Pro advertisement is disabled on the target system.
+
 print_ok "Ensuring Ubuntu Pro advertisement is disabled"
 FILE="/etc/apt/apt.conf.d/20apt-esm-hook.conf"
 if [[ -e "$FILE" ]]; then

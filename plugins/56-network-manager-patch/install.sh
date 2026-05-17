@@ -2,6 +2,9 @@ set -e                  # exit on error
 set -o pipefail         # exit on pipeline error
 set -u                  # treat unset variable as error
 
+# This script configures the network manager for the target system. 
+# This is necessary to ensure that the target system can connect to the network and access the internet.
+
 print_ok "Configuring network manager..."
 cat << EOF > /etc/NetworkManager/NetworkManager.conf
 [main]

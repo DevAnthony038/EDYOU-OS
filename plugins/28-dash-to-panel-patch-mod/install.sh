@@ -10,6 +10,7 @@ if [[ ! -f "$TARGET_FILE" ]]; then
     exit 1
 fi
 
+# --- Apply patch ---
 print_ok "Applying new panel layout patch"
 sed -i '/export const defaults = \[/,/^\]$/c\
 \/\/ EDYOUOS custom default panel layout\

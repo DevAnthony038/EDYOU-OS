@@ -117,6 +117,10 @@ make bootstrap      # Validate environment and dependencies
 - Generated ISOs and artifacts are placed in `./src/dist`.
 - Use `make fast` to build the fast configuration, which currently runs `de_DE` first and then `en_US`.
 
+## Important Info
+
+Note that the complete project was commented by artificial intelligence (OpenCode Model: Big Pickle). If there are false information in the comments let us know!
+
 ---
 
 ## Community & Support

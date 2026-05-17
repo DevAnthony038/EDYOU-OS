@@ -2,6 +2,8 @@ set -e                  # exit on error
 set -o pipefail         # exit on pipeline error
 set -u                  # treat unset variable as error
 
+# This script removes the default GNOME extensions for the target system.
+
 print_ok "Removing default GNOME extensions"
 rm /usr/share/gnome-shell/extensions/apps-menu* -rf
 rm /usr/share/gnome-shell/extensions/auto-move-windows* -rf

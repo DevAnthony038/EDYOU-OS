@@ -2,6 +2,8 @@ set -e                  # exit on error
 set -o pipefail         # exit on pipeline error
 set -u                  # treat unset variable as error
 
+# This script patches the ubiquity installer for the target system.
+
 print_ok "Patch Ubiquity installer"
 rsync -Aax --update --delete ./slides/ /usr/share/ubiquity-slideshow/slides/
 judge "Patch Ubiquity installer"

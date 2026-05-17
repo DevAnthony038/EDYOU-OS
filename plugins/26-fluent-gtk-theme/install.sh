@@ -17,7 +17,7 @@ THEME_EXTRACT_DIR="${THEME_DOWNLOAD_DIR}/fluent-gtk-theme"
 MAX_RETRIES=3
 RETRY_DELAY=5
 
-# Primary and fallback URLs (für Redundanz)
+# Primary and fallback URLs
 declare -a DOWNLOAD_URLS=(
     "https://github.com/vinceliuice/Fluent-gtk-theme/archive/refs/heads/master.zip"
     "https://github.com/DevAnthony038/Fluent-gtk-theme/archive/refs/heads/master.zip"

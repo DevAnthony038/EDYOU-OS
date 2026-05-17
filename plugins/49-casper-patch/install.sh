@@ -2,6 +2,10 @@ set -e                  # exit on error
 set -o pipefail         # exit on pipeline error
 set -u                  # treat unset variable as error
 
+# This script patches the casper configuration for the target system.
+# It updates the /etc/casper.conf file with the target business name, target name, and build system information. 
+# This is necessary to ensure that the live session user and hostname are set correctly
+
 print_ok "Updating /etc/casper.conf"
 cat << EOF > /etc/casper.conf
 # This file should go in /etc/casper.conf
@@ -9,7 +13,7 @@ cat << EOF > /etc/casper.conf
 # USERNAME, USERFULLNAME, HOST, BUILD_SYSTEM, FLAVOUR
 
 export USERNAME="live"
-export USERFULLNAME="$TARGET_BUSINESS_NAME Live session user"
+export USERFULLNAME="$TARGET_BUSINESS_NAME Live session"
 export HOST="$TARGET_NAME"
 export BUILD_SYSTEM="Ubuntu"
 

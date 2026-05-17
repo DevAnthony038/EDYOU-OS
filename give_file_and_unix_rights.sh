@@ -3,6 +3,9 @@ set -e
 set -o pipefail
 set -u
 
+# This script converts all .sh files in the project to Unix line endings and grants execute permissions to the necessary scripts.
+# It also installs dos2unix if it is not already installed.
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 if [[ -f "$SCRIPT_DIR/core/logging.sh" ]]; then

@@ -2,6 +2,8 @@ set -e                  # exit on error
 set -o pipefail         # exit on pipeline error
 set -u                  # treat unset variable as error
 
+# This script installs the gnome desktop environment and other gnome applications for the target system.
+
 print_ok "Installing gnome-shell and other gnome applications"
 wait_network
 

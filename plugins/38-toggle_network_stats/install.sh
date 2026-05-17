@@ -1,7 +1,8 @@
 set -e                  # exit on error
 set -o pipefail         # exit on pipeline error
-set -u   
+set -u                  # treat unset variable as error
 
+# This script adds a new command "toggle_network_stats" to the target system, which toggles the network state display on and off.
 
 print_ok "Adding new command to this OS: toggle_network_stats..."
 cat << EOF > /usr/local/bin/toggle_network_stats
