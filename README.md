@@ -21,6 +21,7 @@ Learn more at the official site: [EDYOU OS Website](https://edyou-os.vercel.app/
 - **Fast and lightweight** — tuned for a broad range of systems.
 - **Stable Ubuntu base** — built on Ubuntu LTS.
 - **Modern appearance** — Windows-like interface for smoother adoption.
+- **Built-in AI** — Eddie our own Frontend for an integrated AI. (For more information see ![Eddie](https://github.com/CrazxVillager/Eddie))
 
 ---
 
